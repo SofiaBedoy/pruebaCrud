@@ -25,14 +25,23 @@ namespace DBCRUDPrueba
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBoxmarca.Text == "" || textBoxmodelo.Text == "" || textBoxserie.Text == "" || textBoxtipo.Text == "" || textBoxprocesador.Text == "" || textBoxcapacidad.Text == "" || comboBoxestado.Text == "")
+            if (textBoxmarca.Text == "" || textBoxmodelo.Text == "" || textBoxserie.Text == "" || comboBoxtipo.Text == "" || textBoxprocesador.Text == "" || textBoxcapacidad.Text == "" || comboBoxestado.Text == "")
             {
                 MessageBox.Show("Favor de llenar todos los campos");
 
+                DBCommands.InsertarComputadora(
+                    textBoxfecha.Text,
+                    textBoxmarca.Text,
+                    textBoxmodelo.Text,
+                    textBoxserie.Text,
+                    comboBoxtipo.Text,
+                    textBoxprocesador.Text,
+                    textBoxcapacidad.Text,
+                    comboBoxestado.Text);
             }
             else
             {
-                DBCommands.InsertarComputadora(textBoxfecha.Text, textBoxmarca.Text, textBoxmodelo.Text, textBoxserie.Text, textBoxtipo.Text, textBoxprocesador.Text, textBoxcapacidad.Text, comboBoxestado.Text);
+                DBCommands.InsertarComputadora(textBoxfecha.Text, textBoxmarca.Text, textBoxmodelo.Text, textBoxserie.Text, comboBoxtipo.Text, textBoxprocesador.Text, textBoxcapacidad.Text, comboBoxestado.Text);
 
                 this.Close();
             }

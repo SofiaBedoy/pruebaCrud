@@ -33,8 +33,10 @@ namespace DBCRUDPrueba
                 string EQUIPO = "CREATE TABLE \"Equipo\" (	" +
                     "\"id\"	INTEGER NOT NULL,	" +
                     "\"fechaentrada\"	TEXT,	" +
-                    "\"marca\"	TEXT,	\"modelo\"	TEXT,	" +
-                    "\"serie\"	TEXT,	\"tipo\"	TEXT,	" +
+                    "\"marca\"	TEXT,	" +
+                    "\"modelo\"	TEXT,	" +
+                    "\"serie\"	TEXT,	" +
+                    "\"tipo\"	TEXT,	" +
                     "\"procesador\"	TEXT,	" +
                     "\"capacidad\"	TEXT,	" +
                     "\"estado\"	TEXT,	" +
