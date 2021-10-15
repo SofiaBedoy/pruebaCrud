@@ -21,6 +21,7 @@ namespace DBCRUDPrueba
             {
                 // Creamos la conexion a la BD. 
                 // El Data Source contiene la ruta del archivo de la BD 
+                // se encuentra en el .\DBCRUDPrueba\bin\Debug como resultados.sqlite
                 conexion =
                       new SQLiteConnection
                       ("Data Source=resultados.sqlite;Version=3;New=True;Compress=True;");
@@ -31,7 +32,7 @@ namespace DBCRUDPrueba
                 #region Tablas
 
                 string EQUIPO = "CREATE TABLE \"Equipo\" (	" +
-                    "\"id\"	INTEGER NOT NULL,	" +
+                    "\"id\"	INTEGER NOT NULL," +
                     "\"fechaentrada\"	TEXT,	" +
                     "\"marca\"	TEXT,	" +
                     "\"modelo\"	TEXT,	" +
@@ -66,6 +67,15 @@ namespace DBCRUDPrueba
             string insercion;
             SQLiteCommand sql_cmd;
 
+            string now = DateTime.Now.ToString();
+            string id = string.Empty;
+
+            for (int i = 0; i < now.Length; i++)
+            {
+                if (Char.IsDigit(now[i]))
+                    id += now[i];
+            }
+
             try
             {
                 conexion =
@@ -75,7 +85,8 @@ namespace DBCRUDPrueba
 
                 sql_cmd = conexion.CreateCommand();
 
-                insercion = "INSERT INTO Equipo (fechaentrada, marca, modelo, serie, tipo, procesador, capacidad, estado) VALUES" +
+                insercion = "INSERT INTO Equipo (id, fechaentrada, marca, modelo, serie, tipo, procesador, capacidad, estado) VALUES (" +
+                    id + ", '" +
                     fecha + "', '" +
                     marca + "', '" +
                     modelo + "', '" +
@@ -83,7 +94,7 @@ namespace DBCRUDPrueba
                     tipo + "', '" +
                     procesador + "', '" +
                     capacidad + "', '" +
-                    estado + "', '";
+                    estado + ");";
 
                 sql_cmd.CommandText = insercion;
                 sql_cmd.ExecuteNonQuery();

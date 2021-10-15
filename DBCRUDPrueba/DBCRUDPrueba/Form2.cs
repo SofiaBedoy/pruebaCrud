@@ -28,7 +28,9 @@ namespace DBCRUDPrueba
             if (textBoxmarca.Text == "" || textBoxmodelo.Text == "" || textBoxserie.Text == "" || comboBoxtipo.Text == "" || textBoxprocesador.Text == "" || textBoxcapacidad.Text == "" || comboBoxestado.Text == "")
             {
                 MessageBox.Show("Favor de llenar todos los campos");
-
+            }
+            else
+            {
                 DBCommands.InsertarComputadora(
                     textBoxfecha.Text,
                     textBoxmarca.Text,
@@ -38,10 +40,6 @@ namespace DBCRUDPrueba
                     textBoxprocesador.Text,
                     textBoxcapacidad.Text,
                     comboBoxestado.Text);
-            }
-            else
-            {
-                DBCommands.InsertarComputadora(textBoxfecha.Text, textBoxmarca.Text, textBoxmodelo.Text, textBoxserie.Text, comboBoxtipo.Text, textBoxprocesador.Text, textBoxcapacidad.Text, comboBoxestado.Text);
 
                 this.Close();
             }

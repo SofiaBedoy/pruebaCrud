@@ -120,15 +120,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(276, 12);
+            this.textBox1.Location = new System.Drawing.Point(290, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 20);
+            this.textBox1.Size = new System.Drawing.Size(272, 20);
             this.textBox1.TabIndex = 5;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "*",
             "Marca",
             "Modelo",
             "Serie",
@@ -136,8 +137,9 @@
             "Disponibilidad"});
             this.comboBox1.Location = new System.Drawing.Point(73, 11);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 21);
+            this.comboBox1.Size = new System.Drawing.Size(211, 21);
             this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 

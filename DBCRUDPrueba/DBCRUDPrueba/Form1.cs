@@ -17,13 +17,27 @@ namespace DBCRUDPrueba
             InitializeComponent();
         }
 
-        private void PrepararTabla()
+        private void PrepararTabla(string var, string value)
         {
-            string comando;
+            string comando = "";
             DataTable DT = new DataTable();
 
+            if (var == "*")
+            {
+                comando = "SELECT * FROM Equipo";
+            }
+            else
+            {
+                if (value != "")
+                {
+                    comando = "SELECT * FROM Equipo WHERE " + var + " LIKE \"%" + value + "%\"";
+                }
+            }
+
             //SELECT * FROM Equipo
-            comando = "SELECT * FROM Equipo;";
+            //comando = "SELECT "+row+" FROM Equipo WHERE "+var+" = \""+ value +"\";";
+
+            comando = comando + ";";
 
             DT = DBCommands.CargarTabla(comando);
             dGVConsulta.DataSource = DT;
@@ -32,7 +46,8 @@ namespace DBCRUDPrueba
         private void frmIndex_Load(object sender, EventArgs e)
         {
             DBCommands.CrearBBDDSiNoExiste();
-            PrepararTabla();
+            comboBox1.Text = "*";
+            PrepararTabla(comboBox1.Text, "");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -50,7 +65,7 @@ namespace DBCRUDPrueba
                 string a = Convert.ToString(selectedRow.Cells[0].Value);
                 DBCommands.EliminarDato(a);
 
-                PrepararTabla();
+                PrepararTabla("*", "");
             }
             else
             {
@@ -60,7 +75,18 @@ namespace DBCRUDPrueba
 
         private void dGVConsulta_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridView dgv = sender as DataGridView;
+            if (dgv == null)
+                return;
+            if (dgv.CurrentRow.Selected)
+            {
+                
+            }
+        }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

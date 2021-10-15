@@ -44,7 +44,6 @@ C:\Users\under\Desktop\pruebaCrud\DBCRUDPrueba\DBCRUDPrueba\bin\Debug\System.Mem
 C:\Users\under\Desktop\pruebaCrud\DBCRUDPrueba\DBCRUDPrueba\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\under\Desktop\pruebaCrud\DBCRUDPrueba\DBCRUDPrueba\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\under\Desktop\pruebaCrud\DBCRUDPrueba\DBCRUDPrueba\obj\Debug\DBCRUDPrueba.FormAdd.resources
-C:\Users\under\Desktop\pruebaCrud\DBCRUDPrueba\DBCRUDPrueba\obj\Debug\DBCRUDPrueba.frmView.resources
 C:\Users\under\Desktop\pruebaCrud\DBCRUDPrueba\DBCRUDPrueba\obj\Debug\DBCRUDPrueba.csproj.CopyComplete
 C:\Users\under\Desktop\pruebaCrud\DBCRUDPrueba\DBCRUDPrueba\obj\Debug\DBCRUDPrueba.exe
 C:\Users\under\Desktop\pruebaCrud\DBCRUDPrueba\DBCRUDPrueba\obj\Debug\DBCRUDPrueba.pdb
